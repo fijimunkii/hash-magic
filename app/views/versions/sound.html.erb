@@ -2,6 +2,8 @@
 
 </div>
 
+<button id="play-sound">Play Boing</button>
+
 <div class="main">
   <h2>Device Motion</h2>
   <table>
@@ -30,7 +32,18 @@
 
 <script>
 
+
   $(function() {
+
+    var canBoing = true;
+
+    var count = 0;
+    $('#play-sound').on('click', function() {
+
+      soundBoard.camera.play();
+    });
+
+
     var $log = $(".log")
 
     function log(event) {
@@ -41,6 +54,14 @@
 
     function clearLog() {
       $log.html("");
+    }
+
+    function trigger(sound, color) {
+      soundBoard[sound].play();
+       $("body").css('background', color)
+       setTimeout(function(){
+         $("body").css('background', 'white');
+       }, 500)
     }
 
     var accels = [];
@@ -54,10 +75,27 @@
     function pushEvent(event) {
       clearLog();
       var event = Math.abs(event);
+
+
+      //blue greeen orange yello red
+
+
+      if(event > 12) {
+        if ( canBoing ) {
+          trigger("camera", "blue");
+          console.log("BOINGED")
+          canBoing = false;
+          setTimeout(function() {
+            canBoing= true;
+          }, 500);
+        }
+      }
+
+
+
       accels.push(event);
       accels.sort(function(a,b){return b-a});
       accels = accels.slice(0, 5);
-      console.log(accels)
       for(var i=0, length=accels.length; i<length; i++){
         log(accels[i]);
       }
@@ -73,10 +111,17 @@
       info = info.replace("Z", acceleration.z);
       document.getElementById("moAccel").innerHTML = info;
 
-      pushEvent(acceleration.x);
+      var event = Math.sqrt(
+        Math.pow(acceleration.x, 2) +
+        Math.pow(acceleration.y, 2) +
+        Math.pow(acceleration.z, 2)
+      )
+
+
+      pushEvent(event);
+
       // Logging the acceleration
 
-      console.log("working : )")
       // Grab the acceleration including gravity from the results
       acceleration = eventData.accelerationIncludingGravity;
       info = xyz.replace("X", acceleration.x);
