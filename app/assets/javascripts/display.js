@@ -6,6 +6,11 @@ Display.POLL_INTERVAL = 250;
 
 Display.trigger = function() {
   Display.soundBoard.transform.play();
+
+  $("body").css('background', 'red');
+  setTimeout(function(){
+    $("body").css('background', 'white');
+  }, 500);
 }
 
 Display.getRequest = function(data) {
