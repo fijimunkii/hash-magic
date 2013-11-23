@@ -6,7 +6,7 @@ class Trigger
 
   def self.set
     @prev_time = DateTime.now.to_f
-    @seen = false
+    # @seen = false
   end
 
   def self.active?(display_id)
@@ -14,12 +14,12 @@ class Trigger
     one_second_ago = now - INTERVAL
 
     is_active = @prev_time.between?(one_second_ago, now)
-    if is_active && !@seen
-      @seen = true
-      return true
-    else
-      return false
-    end
+    # if is_active && !@seen
+    #   @seen = true
+    #   return true
+    # else
+    #   return false
+    # end
 
   end
 
