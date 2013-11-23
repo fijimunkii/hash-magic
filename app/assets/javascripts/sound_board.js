@@ -1,5 +1,5 @@
 function SoundBoard() {
-  var sounds = ["boing", "camera", "mama", "spell", "yipee"];
+  var sounds = ["boing", "camera", "mama", "spell", "yipee", "pipe", "transform"];
   var soundBoard = this;
 
   $.each(sounds, function(i, fileName) {

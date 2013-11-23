@@ -5,7 +5,7 @@ Display.soundBoard = new SoundBoard();
 Display.POLL_INTERVAL = 250;
 
 Display.trigger = function() {
-  Display.soundBoard.boing.play();
+  Display.soundBoard.transform.play();
 }
 
 Display.getRequest = function(data) {
@@ -36,5 +36,10 @@ Display.pollServer = function() {
 $(function() {
 
   Display.pollServer();
+  // Gifs: http://imgur.com/LMNXrdf,juREGaM
+  $("body").on("touchstart click", function(){
+    $("h1").html("Wave your wand to cast a spell!");
+    Display.soundBoard.transform.play();
+  });
 
 });

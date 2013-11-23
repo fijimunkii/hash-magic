@@ -5,7 +5,7 @@ Trigger.soundBoard = new SoundBoard();
 
 Trigger.trigger = function(event) {
   Trigger.sendRequest()
-  Trigger.soundBoard.camera.play();
+  Trigger.soundBoard.spell.play();
 
   $("body").css('background', 'red');
   setTimeout(function(){
@@ -64,8 +64,10 @@ $(function() {
     return;
   }
 
-  $('#play-sound').on('click', function() {
-    Trigger.soundBoard.camera.play();
+  $("body").on("touchstart click", function(){
+    $("h1").html("Now wave your wand like you're Harry Potter!");
+    Trigger.soundBoard.spell.play();
   });
+
 
 });
