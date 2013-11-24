@@ -45,9 +45,6 @@ Display.pollServer = function() {
 
 Display.setup = function() {
 
-  $('#display').html('');
-  $('#wand').html('');
-
   $('body').addClass('not-active');
 
   $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/display.css">');

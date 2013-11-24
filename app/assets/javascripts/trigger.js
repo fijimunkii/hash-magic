@@ -57,9 +57,6 @@ Trigger.deviceMotionHandler = function(eventData) {
 
 Trigger.setup = function() {
 
-  $('#display').html('');
-  $('#wand').html('');
-
   if (window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', Trigger.deviceMotionHandler, false);
   } else {
