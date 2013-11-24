@@ -60,11 +60,11 @@ Trigger.setup = function() {
   $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/trigger.css">');
 
   $h1 = $('<h1>');
-  $h1.text('Tap Here On Your Mobile Device');
+  $h1.text('Tap Here!');
   $('body').append($h1);
 
   $h2 = $('<h2>');
-  $h2.text('Then Open hashmagic.herokuapp.com/ on a computer')
+  $h2.html('Make sure to open <b>hashmagic.herokuapp.com</b> on a computer')
   $('body').append($h2);
 
   if (window.DeviceMotionEvent) {
