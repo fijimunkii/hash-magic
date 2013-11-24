@@ -57,6 +57,8 @@ Trigger.deviceMotionHandler = function(eventData) {
 
 Trigger.setup = function() {
 
+  $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/trigger.css">');
+
   $h1 = $('<h1>');
   $h1.text('Tap Here On Your Mobile Device');
   $('body').append($h1);

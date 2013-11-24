@@ -49,7 +49,6 @@ Display.setup = function() {
 
   $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/display.css">');
 
-
   Display.pollServer();
 
   $("body").on("touchstart click", function(){
