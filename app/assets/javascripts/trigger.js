@@ -55,8 +55,11 @@ Trigger.deviceMotionHandler = function(eventData) {
 
 }
 
+Trigger.setup = function() {
 
-$(function() {
+  $('#display').html('');
+  $('#wand').html('');
+
   if (window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', Trigger.deviceMotionHandler, false);
   } else {
@@ -69,5 +72,4 @@ $(function() {
     Trigger.soundBoard.spell.play();
   });
 
-
-});
+}

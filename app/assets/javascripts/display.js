@@ -43,14 +43,20 @@ Display.pollServer = function() {
   }, Display.POLL_INTERVAL);
 }
 
-$(function() {
+Display.setup = function() {
+
+  $('#display').html('');
+  $('#wand').html('');
+
+  $('body').addClass('not-active');
+
   $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/display.css">');
-  Display.background();
+
+
   Display.pollServer();
-  // Gifs: http://imgur.com/LMNXrdf,juREGaM
+
   $("body").on("touchstart click", function(){
     $("h1").html("Wave your wand to cast a spell!");
     Display.soundBoard.transform.play();
   });
-
-});
+}
