@@ -1,5 +1,5 @@
 .not-active{
-  background: url(../images/mario-stairs.gif) no-repeat center center fixed;
+  background: url(/images/mario-stairs.gif) no-repeat center center fixed;
   -webkit-background-size: 100%; /* For WebKit*/
   -moz-background-size: 100%;    /* Mozilla*/
   -o-background-size: 100%;      /* Opera*/
@@ -7,7 +7,7 @@
 }
 
 .active {
-  background: url(../images/mario-transform.gif) no-repeat center center fixed;
+  background: url(/images/mario-transform.gif) no-repeat center center fixed;
   -webkit-background-size: 100%; /* For WebKit*/
   -moz-background-size: 100%;    /* Mozilla*/
   -o-background-size: 100%;      /* Opera*/
