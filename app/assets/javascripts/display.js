@@ -44,6 +44,7 @@ Display.pollServer = function() {
 }
 
 $(function() {
+  $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/display.css">');
   Display.background();
   Display.pollServer();
   // Gifs: http://imgur.com/LMNXrdf,juREGaM
