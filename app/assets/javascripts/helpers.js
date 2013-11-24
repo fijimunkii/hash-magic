@@ -15,4 +15,4 @@ $(function() {
 });
 
 // Usage
-Interpolate("Hello {0}", "Jonathan")
+// Interpolate("Hello {0}", "Jonathan")
