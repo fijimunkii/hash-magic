@@ -13,3 +13,12 @@
   -o-background-size: 100%;      /* Opera*/
   background-size: 100%;         /* Generic*/
 }
+
+.qr-code{
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  left: 40%;
+  right: 40%;
+  bottom: 100px;
+}
