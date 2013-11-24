@@ -6,6 +6,16 @@ Display.POLL_INTERVAL = 250;
 
 Display.trigger = function() {
   Display.soundBoard.transform.play();
+  Display.background();
+}
+
+Display.background = function(isActive) {
+  $('body').removeClass('not-active');
+  $('body').addClass('active');
+  setTimeout(function() {
+    $('body').removeClass('active');
+    $('body').addClass('not-active');
+  }, 1000);
 }
 
 Display.getRequest = function(data) {
@@ -34,7 +44,7 @@ Display.pollServer = function() {
 }
 
 $(function() {
-
+  Display.background();
   Display.pollServer();
   // Gifs: http://imgur.com/LMNXrdf,juREGaM
   $("body").on("touchstart click", function(){
