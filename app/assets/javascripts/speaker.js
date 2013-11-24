@@ -1,0 +1,2 @@
+Speaker.loadSound()
+Speaker.playSound()

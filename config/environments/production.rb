@@ -61,7 +61,7 @@ HashMagic::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.assets.precompile += %w(display.js helpers.js sound_board.js trigger.js application.js)
+  config.assets.precompile += %w(display.js helpers.js sound_board.js trigger.js application.js main.js)
 
 
   # Log the query plan for queries taking more than this (works

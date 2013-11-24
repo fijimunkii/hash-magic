@@ -6,6 +6,13 @@ Display.POLL_INTERVAL = 250;
 
 Display.trigger = function() {
   Display.soundBoard.transform.play();
+<<<<<<< HEAD
+
+  $("body").css('background', 'red');
+  setTimeout(function(){
+    $("body").css('background', 'white');
+  }, 500);
+=======
   Display.background();
 }
 
@@ -16,6 +23,7 @@ Display.background = function(isActive) {
     $('body').removeClass('active');
     $('body').addClass('not-active');
   }, 1000);
+>>>>>>> 2c49db6b49ea937765c1a33c0bdd04842a9a3f8c
 }
 
 Display.getRequest = function(data) {

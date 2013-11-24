@@ -55,8 +55,18 @@ Trigger.deviceMotionHandler = function(eventData) {
 
 }
 
+Trigger.setup = function() {
 
-$(function() {
+  $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/trigger.css">');
+
+  $h1 = $('<h1>');
+  $h1.text('Tap Here!');
+  $('body').append($h1);
+
+  $h2 = $('<h2>');
+  $h2.html('Make sure to open <b>hashmagic.herokuapp.com</b> on a computer')
+  $('body').append($h2);
+
   if (window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', Trigger.deviceMotionHandler, false);
   } else {
@@ -69,5 +79,4 @@ $(function() {
     Trigger.soundBoard.spell.play();
   });
 
-
-});
+}
