@@ -57,6 +57,14 @@ Trigger.deviceMotionHandler = function(eventData) {
 
 Trigger.setup = function() {
 
+  $h1 = $('<h1>');
+  $h1.text('Tap Here On Your Mobile Device');
+  $('body').append($h1);
+
+  $h2 = $('<h2>');
+  $h2.text('Then Open hashmagic.herokuapp.com/ on a computer')
+  $('body').append($h2);
+
   if (window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', Trigger.deviceMotionHandler, false);
   } else {
