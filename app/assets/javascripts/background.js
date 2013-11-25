@@ -1,8 +1,10 @@
-Background.setImage()
-Background.setColor()
+var Background = Background || {}
 
-Background.flashImage
-Background.flashColor("blue")
-Background.flashColorForDuration()
+Background.setImage();
+Background.setColor();
+
+Background.flashImage;
+Background.flashColor("blue");
+Background.flashColorForDuration();
 
 
