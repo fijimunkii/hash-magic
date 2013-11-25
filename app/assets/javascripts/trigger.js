@@ -2,6 +2,7 @@ var Trigger = Trigger || {};
 
 Trigger.soundBoard = new SoundBoard();
 
+Trigger.timeCode = null;
 
 Trigger.trigger = function(event) {
   Trigger.sendRequest()
@@ -16,7 +17,7 @@ Trigger.trigger = function(event) {
 
 Trigger.sendRequest = function(data) {
   return $.ajax({
-    url: '/wand/trigger/' + timeCode,
+    url: '/wand/trigger/' + Trigger.timeCode,
     type: 'post',
     data: data || {}
   });
@@ -58,6 +59,8 @@ Trigger.deviceMotionHandler = function(eventData) {
 Trigger.setup = function() {
 
   $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/trigger.css">');
+
+  Trigger.timeCode = $('#time').attr('data-id');
 
   $h1 = $('<h1>');
   $h1.text('Tap Here!');
