@@ -14,6 +14,7 @@ class Trigger
     one_second_ago = now - INTERVAL
 
     is_active = @prev_time[id].between?(one_second_ago, now) if @prev_time[id]
+
     if is_active && !@seen[id]
       @seen[id] = true
       return true
