@@ -4,8 +4,7 @@ class DisplaysController < ApplicationController
   end
 
   def listen
-    display_id = params[:id]
-    should_trigger = Trigger.active?(display_id)
+    should_trigger = Trigger.active?(params[:id])
     render json: { trigger: should_trigger }
   end
 

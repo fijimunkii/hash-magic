@@ -1,8 +1,10 @@
 HashMagic::Application.routes.draw do
   root to: 'welcome#index'
 
-  match '/display/listen', to: 'displays#listen'
+  match '/display/listen/:id', to: 'displays#listen'
 
-  match '/wand/trigger', to: 'wands#trigger'
+  match '/wand/trigger/:id', to: 'wands#trigger'
+
+  get '/:id', to: 'welcome#trigger'
 
 end

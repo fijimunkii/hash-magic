@@ -16,7 +16,7 @@ Trigger.trigger = function(event) {
 
 Trigger.sendRequest = function(data) {
   return $.ajax({
-    url: '/wand/trigger',
+    url: '/wand/trigger/' + timeCode,
     type: 'post',
     data: data || {}
   });
@@ -64,7 +64,7 @@ Trigger.setup = function() {
   $('body').append($h1);
 
   $h2 = $('<h2>');
-  $h2.html('Make sure to open <b>hashmagic.herokuapp.com</b> on a computer')
+  $h2.html('Make sure to open hashmagic.herokuapp.com/ on a computer')
   $('body').append($h2);
 
   if (window.DeviceMotionEvent) {
