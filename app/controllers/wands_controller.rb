@@ -3,7 +3,7 @@ class WandsController < ApplicationController
   end
 
   def trigger
-    Trigger.set
+    Trigger.set params[:id]
     render json: { success: true }
   end
 end
