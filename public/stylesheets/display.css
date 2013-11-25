@@ -22,3 +22,18 @@
   right: 40%;
   bottom: 100px;
 }
+
+.not-hovered {
+  display: none;
+}
+
+.hovered {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  left: 40%;
+  right: 40%;
+  bottom: 70px;
+}
