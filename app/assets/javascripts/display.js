@@ -70,22 +70,23 @@ Display.setup = function() {
 
   $('head').append('<link rel="stylesheet" type="text/css" href="/stylesheets/display.css">');
 
+  $hover = $('<div>')
+  .addClass('not-hovered')
+  .addClass('link')
+  .text('magicwand.herokuapp.com/' + Display.timeCode)
+  .appendTo($('body'));
+
   $qrCode = $('<img>')
   .addClass('qr-code')
   .attr('src', Display.qrCode)
-  .appendTo($('body'));
-
-  $hover = $('<div>')
-  .addClass('not-hovered')
-  .text('magicwand.herokuapp.com/' + Display.timeCode)
   .appendTo($('body'))
   .on('mouseover', function() {
-    $(this).removeClass('not-hovered');
-    $(this).addClass('hovered');
+    $hover.removeClass('not-hovered');
+    $hover.addClass('hovered');
   })
   .on('mouseleave', function() {
-    $(this).addClass('not-hovered');
-    $(this).removeClass('hovered');
+    $hover.addClass('not-hovered');
+    $hover.removeClass('hovered');
   });
 
 
