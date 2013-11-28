@@ -6,7 +6,7 @@ class Trigger
 
   def self.set(session_id)
     @prev_time[session_id] = DateTime.now.to_f
-    @seen[session_id]
+    @seen[session_id] = false
   end
 
   def self.active?(session_id, display_id)
