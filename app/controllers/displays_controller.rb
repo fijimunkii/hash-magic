@@ -4,7 +4,8 @@ class DisplaysController < ApplicationController
   end
 
   def listen
-    should_trigger = Trigger.active?(params[:id])
+    binding.pry
+    should_trigger = Trigger.active?(params[:id], session[:_csrf_token])
     render json: { trigger: should_trigger }
   end
 

@@ -4,19 +4,19 @@ class Trigger
   @prev_time = {}
   @seen = {}
 
-  def self.set(id)
-    @prev_time[id] = DateTime.now.to_f
-    @seen[id] = false
+  def self.set(session_id)
+    @prev_time[session_id] = DateTime.now.to_f
+    @seen[session_id]
   end
 
-  def self.active?(id)
+  def self.active?(session_id, display_id)
     now = DateTime.now.to_f
     one_second_ago = now - INTERVAL
 
-    is_active = @prev_time[id].between?(one_second_ago, now) if @prev_time[id]
+    is_active = @prev_time[session_id].between?(one_second_ago, now) if @prev_time[session_id]
 
-    if is_active && !@seen[id]
-      @seen[id] = true
+    if is_active && !@seen[session_id][display_id]
+      @seen[session_id][display_id] = true
       return true
     else
       return false
