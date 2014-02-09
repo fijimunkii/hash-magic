@@ -63,6 +63,7 @@ HashMagic::Application.configure do
 
   config.assets.precompile += %w(display.js helpers.js sound_board.js trigger.js application.js main.js)
 
+  config.assets.initialize_on_precompile = false
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
